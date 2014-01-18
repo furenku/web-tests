@@ -8,13 +8,17 @@ a {
     font-weight:bold;
 }
 
-.caja {
+.caja,
+.caja1,.caja2,.caja3{
     border:1px solid #000;
-    width:29%;
     float:left;
     height : 150px;
     margin:1%; padding:1%;
     display:inline-block;
 }
+.caja1{ width:98%; }
+.caja2{ width:48%; }   
+.caja3{ width:29%; } 
+
 
 li{ float:left; list-style: none; margin:10px;}
