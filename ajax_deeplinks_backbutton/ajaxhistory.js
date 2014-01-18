@@ -39,8 +39,11 @@ var cargar_contenido = function(){
 
 jQuery(document).ready(function($){
     
+    var cargando = $('#imagen_cargando');
+
     $('#links li').click(function(e){
-	var index = $(this).index();
+	contenedor.html( cargando.clone().show() );
+    	var index = $(this).index();
 	History.pushState({state:index,index:index+1}, index, "?state="+index);
 	e.preventDefault();
 	return false;
