@@ -1,6 +1,5 @@
-var contenidos = ["contenido inicial","contenido uno", "contenido dos", "contenido tres"];
-
 var contenedor = $('#contenedor');
+var contenido_inicial;// = contenedor.html();
 var cargando = $('#imagen_cargando');
 var cargar_contenido = function(){
     var State = History.getState(); // Note: We are using History.getState() instead of event.state
@@ -8,9 +7,10 @@ var cargar_contenido = function(){
     
     var index = State.data.index;
     if(!index) index = queryStringToJSON(State.url).state;
-    if(!index) index = 0;
+    if(!index)
+	contenedor.html(contenido_inicial);
     else {
-	var contenido = contenidos[index];
+//	var contenido = contenidos[index];
 	var url = $('#links li').eq(index).find('a').attr('href');
 	console.log("url",url);
 	contenedor.html( cargando.clone().show() );
@@ -43,7 +43,7 @@ var cargar_contenido = function(){
 
 jQuery(document).ready(function($){
     
-    
+    contenido_inicial = contenedor.html(); 
 
     $('#links li').click(function(e){
         var url = $(this).find('a').attr('href');
