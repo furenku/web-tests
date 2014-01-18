@@ -1,0 +1,40 @@
+
+<html>
+  <head>
+    <meta charset='utf-8'></meta>
+    <style type="text/css">
+     #links, #contenedor, #intro {
+       border:1px solid #ccc;
+       width:29%;
+       float:left;
+       height : 150px;
+       margin:1%; padding:1%;
+       display:inline-block;
+     }
+     #links li{ float:left; list-style: none; margin:10px;}
+    </style>
+    <title>ajax history</title>      
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
+    <script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+    <!-- Ajaxify
+    <script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
+    -->
+  </head>
+  <body>
+    <h1>AJAX + deeplinks + botón atrás/adelante</h1>
+    <div id="intro">
+Dos de los problemas principales con el cargado dinámico de contenidos via AJAX es la imposibilidad de compartir los links y de utilizar el botón Atrás / Adelante. Utilizando el plugin <a href="https://github.com/browserstate/history.js/" title="History.js">History.js</a> encontramos una solución para ambos problemas.
+    </div>
+      
+      <div>
+      <ul id="links">
+        <li><a id="link1" href="#a">liga 1</a></li>
+        <li><a id="link2" href="#b">liga 2</a></li>
+        <li><a id="link3" href="#c">liga 3</a></li>
+      </ul>
+    </div>
+    <div+ id="contenedor">contenido inicial</div>
+  </body>
+  <script src="ajaxhistory.js"></script>
+</html>
