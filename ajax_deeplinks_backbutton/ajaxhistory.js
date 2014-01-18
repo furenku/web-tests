@@ -10,7 +10,7 @@ var cargar_contenido = function(){
     if(!index)
 	contenedor.html(contenido_inicial);
     else {
-//	var contenido = contenidos[index];
+
 	var url = $('#links li').eq(index).find('a').attr('href');
 	console.log("url",url);
 	contenedor.html( cargando.clone().show() );
@@ -46,10 +46,12 @@ jQuery(document).ready(function($){
     contenido_inicial = contenedor.html(); 
 
     $('#links li').click(function(e){
-        var url = $(this).find('a').attr('href');
+        var link = $(this).find('a');
+	var url = link.attr('href');
+	var titulo = link.text();
 	contenedor.load( url );
     	var index = $(this).index();
-	History.pushState({state:index,index:index}, index, "?state="+index);
+	History.pushState({state:index,index:index}, titulo, "?state="+index);
 	e.preventDefault();
 	return false;
     });
